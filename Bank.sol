@@ -11,10 +11,10 @@ contract Bank {
         balances[msg.sender] += msg.value;
     }
 
-    function withdraw(uint amount) public {
-        if (balances[msg.sender] >= amount) {
-            balances[msg.sender] -= amount;
-            msg.sender.transfer(amount);
+    function withdraw() public {
+        if (balances[msg.sender] >= 10) {
+            balances[msg.sender] -= 10;
+            msg.sender.transfer(10);
         }
     }
 
