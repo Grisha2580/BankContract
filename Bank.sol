@@ -3,7 +3,7 @@ contract Bank {
     address owner;
     mapping(address => uint) balances;
     
-    function Bank() {
+    constructor() {
         owner = msg.sender;
     }
 
