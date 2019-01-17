@@ -7,22 +7,22 @@ contract Bank {
         owner = msg.sender;
     }
 
-    function deposit() external payable {
+    function deposit() public payable {
         balances[msg.sender] += msg.value;
     }
 
-    function withdraw() external {
+    function withdraw() public {
         if (balances[msg.sender] >= 10) {
             balances[msg.sender] -= 10;
             msg.sender.transfer(10);
         }
     }
 
-    function getMyBalance() external view returns(uint) {
+    function getMyBalance() public view returns(uint) {
         return balances[msg.sender];
     }
 
-    function kill() external {
+    function kill() public {
         if (msg.sender == owner)
             selfdestruct(owner);
     }
